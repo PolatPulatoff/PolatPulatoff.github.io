@@ -1,0 +1,291 @@
+<!--
+  Project: Personal Landing Page
+  Author: Humoyun Polatov
+  Tech: HTML, CSS, JavaScript
+  Notes: Single-page responsive layout with smooth scrolling and interactive UI.
+-->
+
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Code author meta -->
+  <meta name="author" content="Humoyun Polatov" />
+
+  <title>Humoyun Polatov | Portfolio</title>
+  <meta name="description" content="Humoyun Polatov — minimal portfolio/landing page (HTML, CSS, JS)." />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top progress bar -->
+  <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="top">
+    <nav class="nav container" aria-label="Asosiy navigatsiya">
+      <a class="brand" href="#top" aria-label="Bosh sahifa">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__text">HP</span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" type="button" aria-label="Menyuni ochish" aria-expanded="false">
+        <span class="nav__burger" aria-hidden="true"></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a class="nav__link" href="#about">Men haqimda</a></li>
+        <li><a class="nav__link" href="#services">Xizmatlar</a></li>
+        <li><a class="nav__link" href="#projects">Loyihalar</a></li>
+        <li><a class="nav__link" href="#contact">Aloqa</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <button class="btn btn--ghost" id="themeToggle" type="button" aria-label="Mavzuni almashtirish">
+          Theme
+        </button>
+        <a class="btn btn--primary" href="#contact">Bog‘lanish</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge">Full Stack Developer • Content Creator</p>
+          <h1 class="hero__title">
+            Salom, men <span class="accent">Humoyun Polatov</span>.
+          </h1>
+          <p class="hero__subtitle">
+            Minimal va tez ishlaydigan web saytlar, landing page va kichik web app’larni HTML, CSS, JS asosida quraman.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#projects">Ishlarim</a>
+            <a class="btn btn--secondary" href="#about">Batafsil</a>
+          </div>
+
+          <div class="hero__stats" role="list" aria-label="Qisqa ko‘rsatkichlar">
+            <div class="stat" role="listitem">
+              <div class="stat__num" data-counter="12">0</div>
+              <div class="stat__label">Mini loyihalar</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__num" data-counter="3">0</div>
+              <div class="stat__label">Landing template</div>
+            </div>
+            <div class="stat" role="listitem">
+              <div class="stat__num" data-counter="7">0</div>
+              <div class="stat__label">Kunlik practice</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card" aria-label="Profil kartasi">
+          <div class="card">
+            <div class="card__top">
+              <div class="avatar" aria-hidden="true">HP</div>
+              <div>
+                <div class="card__name">Humoyun Polatov</div>
+                <div class="card__role">Web Developer</div>
+              </div>
+            </div>
+
+            <div class="card__mid">
+              <div class="pill">HTML</div>
+              <div class="pill">CSS</div>
+              <div class="pill">JavaScript</div>
+              <div class="pill">Responsive</div>
+              <div class="pill">UI</div>
+            </div>
+
+            <div class="card__bottom">
+              <button class="btn btn--secondary w-100" id="copyEmailBtn" type="button">
+                Email’ni nusxalash
+              </button>
+              <p class="hint" id="copyHint" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Men haqimda</h2>
+          <p class="section__desc">
+            Maqsad: sodda, tez va tartibli UI. Kod: tushunarli, modular va maintainable.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="panel">
+            <h3 class="panel__title">Nima qilaman?</h3>
+            <ul class="list">
+              <li>Landing page / portfolio sahifalar</li>
+              <li>Interaktiv komponentlar (modal, tab, form validation)</li>
+              <li>Performance va accessibility asoslari</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <h3 class="panel__title">Qanday ishlayman?</h3>
+            <ol class="list list--ordered">
+              <li>Struktura: semantik HTML</li>
+              <li>Layout: responsive CSS (grid/flex)</li>
+              <li>Interaktivlik: JS (event, state, validation)</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Xizmatlar</h2>
+          <p class="section__desc">Eng ko‘p kerak bo‘ladigan front-end deliverable’lar.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="service">
+            <h3 class="service__title">Landing Page</h3>
+            <p class="service__desc">Konversiya uchun minimal, tez va mobilga mos sahifa.</p>
+            <div class="service__meta">HTML • CSS • JS</div>
+          </article>
+
+          <article class="service">
+            <h3 class="service__title">UI Komponentlar</h3>
+            <p class="service__desc">Navbar, modal, tab, accordion, form validation.</p>
+            <div class="service__meta">Vanilla JS</div>
+          </article>
+
+          <article class="service">
+            <h3 class="service__title">Basic SEO</h3>
+            <p class="service__desc">Semantika, meta, performance, accessibility bazasi.</p>
+            <div class="service__meta">Best practice</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Loyihalar</h2>
+          <p class="section__desc">Quyida demo kartalar. Xohlasangiz real kontent bilan almashtirib beraman.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="tabs" role="tablist" aria-label="Filtr">
+            <button class="tab is-active" type="button" data-filter="all" role="tab" aria-selected="true">Hammasi</button>
+            <button class="tab" type="button" data-filter="landing" role="tab" aria-selected="false">Landing</button>
+            <button class="tab" type="button" data-filter="ui" role="tab" aria-selected="false">UI</button>
+            <button class="tab" type="button" data-filter="forms" role="tab" aria-selected="false">Forms</button>
+          </div>
+
+          <div class="search">
+            <input class="search__input" id="searchInput" type="search" placeholder="Qidirish: masalan, landing" aria-label="Qidirish" />
+          </div>
+        </div>
+
+        <div class="grid grid--3" id="projectGrid" aria-live="polite">
+          <article class="project" data-tags="landing ui">
+            <h3 class="project__title">Minimal Landing</h3>
+            <p class="project__desc">Hero + features + CTA. Responsive layout.</p>
+            <div class="project__tags">
+              <span class="tag">landing</span><span class="tag">ui</span>
+            </div>
+          </article>
+
+          <article class="project" data-tags="ui">
+            <h3 class="project__title">Navbar + Modal</h3>
+            <p class="project__desc">Hamburger menyu va modal boshqaruvi.</p>
+            <div class="project__tags">
+              <span class="tag">ui</span>
+            </div>
+          </article>
+
+          <article class="project" data-tags="forms ui">
+            <h3 class="project__title">Contact Form</h3>
+            <p class="project__desc">Validatsiya + UX xabarlar.</p>
+            <div class="project__tags">
+              <span class="tag">forms</span><span class="tag">ui</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Aloqa</h2>
+          <p class="section__desc">Forma orqali xabar yuborish (front-end validatsiya bilan).</p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="panel">
+            <h3 class="panel__title">Kontakt ma’lumotlar</h3>
+            <p class="muted">
+              Demo email: <strong id="emailText">humoyun.polatov@example.com</strong>
+            </p>
+            <p class="muted">
+              Ish va hamkorlik: landing, portfolio, UI komponentlar.
+            </p>
+
+            <div class="notice">
+              <strong>Eslatma:</strong> Bu demo forma. Backend ulash uchun (FastAPI/Django) endpoint kerak bo‘ladi.
+            </div>
+          </div>
+
+          <form class="form panel" id="contactForm" novalidate>
+            <div class="field">
+              <label class="label" for="name">Ism</label>
+              <input class="input" id="name" name="name" type="text" required minlength="2" placeholder="Ismingiz" />
+              <p class="error" data-error-for="name"></p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="email">Email</label>
+              <input class="input" id="email" name="email" type="email" required placeholder="email@domain.com" />
+              <p class="error" data-error-for="email"></p>
+            </div>
+
+            <div class="field">
+              <label class="label" for="message">Xabar</label>
+              <textarea class="input textarea" id="message" name="message" required minlength="10" placeholder="Qisqacha yozing..."></textarea>
+              <p class="error" data-error-for="message"></p>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Yuborish</button>
+            <p class="hint" id="formHint" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p class="muted">
+        © <span id="year"></span> Humoyun Polatov. All rights reserved.
+      </p>
+      <a class="to-top" href="#top">Yuqoriga</a>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
